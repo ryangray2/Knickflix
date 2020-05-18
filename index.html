@@ -1,0 +1,158 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Knickflix</title>
+  <meta name="description" content="Knickflix">
+  <meta name="author" content="SitePoint">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,400,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="quarantine.css?v=1.0">
+
+
+
+
+</head>
+<body onload="start()">
+
+  <div id="logoFlash">
+    <img src="knickflixLogo.gif" id="logoFlashPic" class="img-responsive center-block">
+  </div>
+
+  <nav class="navbar navbar-fixed-top fadeInTarget" id="navb">
+      <img src="knickflixLogo.png" onclick="reload()" id="logo" class="navbar-brand img-responsive">
+
+        <a style="padding: 5px" href="https://theknickswall.com/"><img src="knickflixUser.jpg" id="user"></a>
+          <a href="#" onclick="goToSearch()" id="searchButton"><img id="searchPic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/945px-Vector_search_icon.svg.png"></a>
+  </nav>
+  <div style="height: 75px">
+  </div>
+
+  <div class="container fadeInTarget" id="startPage">
+    <div class="container" id="initDiv">
+      <div class="row">
+        <div class="col-xs-8 col-md-5" id="rand">
+          <img class="img-responsive" src="randomGame.png">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <h4 class="sub">Any Knicks Game Will Do</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-8 col-md-4">
+          <h5 class="subsub">Hit play to watch a random Knicks game. Or pick a category for something more specific.</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-5 col-md-2">
+          <button id="playButton" onclick="completelyRandom()"><span class="glyphicon glyphicon-play" ></span> Play</button>
+        </div>
+        <div class="col-xs-2 col-md-3">
+        </div>
+        <div class="col-xs-5 col-md-7">
+          <p class="pull-right" id="credit">Created by <br> Ryan Gray</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container" id="search">
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Start typing...">
+
+      <ul id="myUL" style="height: 400px; overflow: auto">
+      </ul>
+    </div>
+
+    <div class="container" id="tagz">
+      <div class="row">
+        <p class="category">Player</p>
+      </div>
+      <div class="row">
+        <div class="scrollbar" id="player">
+        </div>
+      </div>
+    </div>
+    <div class=container>
+      <div class="row">
+        <p class="category">Game Type</p>
+      </div>
+      <div class="row">
+        <div class="scrollbar" id="gamet">
+        </div>
+      </div>
+    </div>
+    <div class=container>
+      <div class="row">
+        <p class="category">Go for Glory</p>
+      </div>
+      <div class="row">
+        <div class="scrollbar" id="glory">
+        </div>
+      </div>
+    </div>
+    <div class=container>
+      <div class="row">
+        <p class="category">Era</p>
+      </div>
+      <div class="row">
+        <div class="scrollbar" id="era">
+        </div>
+      </div>
+    </div>
+    <div class=container>
+      <div class="row">
+        <p class="category">Individual Greatness</p>
+      </div>
+      <div class="row">
+        <div class="scrollbar" id="indiv">
+        </div>
+      </div>
+    </div>
+    <div class="row text-center" id="tags">
+
+    </div>
+  </div>
+  <div class="container" id="specificsPage">
+    <div class="row text-center" id="ctrow">
+      <div class="scrollbar" id="currentTags">
+
+      </div>
+    </div>
+    <div class="row text-center" id="sp">
+      <div class="col-sm-2 col-md-4">
+      </div>
+      <div class="col-sm-8 col-md-4 ">
+        <button id="playButton" onclick="specificsPlay()"><span class="glyphicon glyphicon-play" ></span> Play</button>
+      </div>
+    </div>
+    <div class="row text-center">
+        <p id="goNow" style="color: white">You can hit "play" to find a game right now with your current categories, or pick more categories below to get more specific.</p>
+    </div>
+    <div class="row">
+      <div class="scrollbar" id="remainingTags">
+
+      </div>
+    </div>
+</div>
+  <div class="container" id="gamePage">
+    <div class="row text-center slide-in-top ">
+      <h1 id="gameTitle"></h1>
+    </div>
+    <div class="row text-center">
+    <iframe class="scale-in-ver-center" id="gameEmbed" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+  </div>
+
+
+  <script src="games.js" ></script>
+  <script src="quarantine.js" ></script>
+</body>
+
+</html>
